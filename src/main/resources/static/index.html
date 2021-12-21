@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Заполните форму отправки данных</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+          integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l"
+          crossorigin="anonymous"></head>
+
+<style>
+        form {
+  /* Расположим форму по центру страницы */
+  margin: 0 auto;
+  width: 400px;
+  /* Определим контур формы */
+  padding: 1em;
+  border: 1px solid #CCC;
+  border-radius: 1em;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+form li + li {
+  margin-top: 1em;
+}
+
+label {
+  /* Определим размер и выравнивание */
+  display: inline-block;
+  width: 250px;
+  text-align: left;
+}
+
+input,
+textarea {
+  /* Убедимся, что все поля имеют одинаковые настройки шрифта
+     По умолчанию в textarea используется моноширинный шрифт */
+  font: 1em sans-serif;
+
+  /* Определим размер полей */
+  width: 300px;
+  box-sizing: border-box;
+
+  /* Стилизуем границы полей */
+  border: 1px solid #999;
+}
+
+input:focus,
+textarea:focus {
+  /* Дополнительная подсветка для элементов в фокусе */
+  border-color: #000;
+}
+
+textarea {
+  /* Выравним многострочные текстовые поля с их текстами-подсказками */
+  vertical-align: top;
+
+  /* Предоставим пространство для ввода текста */
+  height: 5em;
+}
+
+.button {
+  /* Выравним кнопки с их текстами-подсказками */
+  padding-left: 250px; /* same size as the label elements */
+}
+
+button {
+  /* Этот дополнительный внешний отступ примерно равен расстоянию
+     между текстами-подсказками и текстовыми полями */
+  margin-left: .1em;
+}
+    </style>
+<body>
+<form action="/send_data" method="post">
+    <ul>
+        <li>
+            <label for="fio">Фамилия, имя, отчество</label>
+            <input type="text" id="fio" name="fio">
+        </li>
+        <li>
+            <label for="mail">E-mail:</label>
+            <input type="email" id="mail" name="email">
+        </li>
+        <li>
+            <label for="phone">Мобильный телефон</label>
+            <input type="text" id="phone" name="phone">
+        </li>
+        <li>
+            <label for="q1">Любимая игра №1</label>
+            <input type="text" id="q1" name="q1">
+        </li>
+        <li>
+            <label for="q2">Любимая игра №2</label>
+            <input type="text" id="q2" name="q2">
+        </li>
+        <li>
+            <label for="q3">Любимая игра №3</label>
+            <input type="text" id="q3" name="q3">
+        </li>
+    </ul>
+    <br><br>
+    <button type="submit">Отправить данные</button>
+</form>
+<p><a href="/get_data">Поcмотреть ответы</a></p>
+
+</body>
+</html>
